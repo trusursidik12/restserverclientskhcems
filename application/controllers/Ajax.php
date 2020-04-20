@@ -19,18 +19,18 @@ class Ajax extends CI_Controller {
         $list = $this->ajax_m->get_datatables();
         $data = array();
         $no = @$_POST['start'];
-        foreach ($list as $cams) {
+        foreach ($list as $cems) {
             $no++;
             $row = array();
             $row[] = $no.".";
-            $row[] = $cams->id_stasiun;
-            $row[] = $cams->waktu;
-            $row[] = $cams->h2s;
-            $row[] = $cams->cs2;
-            $row[] = round($cams->h2s / 1500, 3);
-            $row[] = round($cams->cs2 / 3130, 3);
-            $row[] = $cams->velocity;
-            $row[] = $cams->temperature;
+            $row[] = 'CEMS_RUM';
+            $row[] = $cems->waktu;
+            $row[] = $cems->h2s;
+            $row[] = $cems->cs2;
+            $row[] = round($cems->h2s / 1500, 3);
+            $row[] = round($cems->cs2 / 3130, 3);
+            $row[] = $cems->velocity;
+            $row[] = $cems->temperature;
             $data[] = $row;
         }
         $output = array(
