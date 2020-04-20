@@ -2,6 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
+$route['ajax/get/cemsdata']			= 'ajax/get_ajax';
+
 $route['api/get/cemsdata']			= 'api/cemsdata';
 
 $route['api/add/cemsdata']			= 'cemsdata/cems';

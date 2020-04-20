@@ -29,13 +29,8 @@ class Ajax extends CI_Controller {
             $row[] = $cams->cs2;
             $row[] = round($cams->h2s / 1500, 3);
             $row[] = round($cams->cs2 / 3130, 3);
-            $row[] = $cams->ws;
-            $row[] = $cams->wd;
-            $row[] = $cams->humidity;
+            $row[] = $cams->velocity;
             $row[] = $cams->temperature;
-            $row[] = $cams->pressure;
-            $row[] = $cams->sr;
-            $row[] = $cams->rain_intensity;
             $data[] = $row;
         }
         $output = array(

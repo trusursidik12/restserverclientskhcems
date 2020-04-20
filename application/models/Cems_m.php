@@ -3,18 +3,18 @@
 class Cems_m extends CI_Model
 {
 
-	public function get_cems_data($id = FALSE)
-	{
-		if($id === FALSE){
-			$this->db->select('DISTINCT(waktu), id_stasiun, h2s, cs2, velocity, temperature');
-			$this->db->group_by('waktu'); 
-			$this->db->order_by('waktu', 'DESC');
-			$query = $this->db->get('cems_data');
-			return $query->result_array();
-		}
-		$query = $this->db->get_where('cems_data', array('id' => $id));
-		return $query->row_array();
-	}
+	// public function get_cems_data($id = FALSE)
+	// {
+	// 	if($id === FALSE){
+	// 		$this->db->select('DISTINCT(waktu), id_stasiun, h2s, cs2, velocity, temperature');
+	// 		$this->db->group_by('waktu'); 
+	// 		$this->db->order_by('waktu', 'DESC');
+	// 		$query = $this->db->get('cems_data');
+	// 		return $query->result_array();
+	// 	}
+	// 	$query = $this->db->get_where('cems_data', array('id' => $id));
+	// 	return $query->row_array();
+	// }
 
 	public function get_cems_data_home($id = FALSE)
 	{
