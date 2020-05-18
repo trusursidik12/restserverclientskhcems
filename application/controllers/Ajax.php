@@ -29,7 +29,7 @@ class Ajax extends CI_Controller {
             $row[] = round($cems->cs2 * 3130);
             $row[] = $cems->h2s;
             $row[] = $cems->cs2;
-            $row[] = $cems->velocity;
+            $row[] = $cems->ws;
             $row[] = $cems->temperature;
             $data[] = $row;
         }

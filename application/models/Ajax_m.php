@@ -8,7 +8,7 @@ class Ajax_m extends CI_Model
     var $order = array('id' => 'desc'); // default order
  
     private function _get_datatables_query() {
-		$this->db->select('DISTINCT(waktu), id_stasiun, h2s, cs2, velocity, temperature');
+		$this->db->select('DISTINCT(waktu), id_stasiun, h2s, cs2, ws, temperature');
 		$this->db->group_by('waktu'); 
         $this->db->where('id_stasiun', 'CEMS_RUM');
         $this->db->from('aqm_data');
