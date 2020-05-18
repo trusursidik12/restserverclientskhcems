@@ -21,10 +21,11 @@ class Cems_m extends CI_Model
 		if($id === FALSE){
 			$this->db->order_by('id', 'DESC');
 			$this->db->limit('1');
-			$query = $this->db->get('cems_data');
+			$this->db->where('id_stasiun', 'CEMS_RUM');
+			$query = $this->db->get('aqm_data');
 			return $query->result_array();
 		}
-		$query = $this->db->get_where('cems_data', array('id' => $id));
+		$query = $this->db->get_where('aqm_data', array('id' => $id));
 		return $query->row_array();
 	}
 
@@ -39,6 +40,6 @@ class Cems_m extends CI_Model
 			'velocity' 			=> $this->input->post('velocity'),
 			'temperature' 		=> $this->input->post('temperature')
 		);
-		return $this->db->insert('cems_data', $data);
+		return $this->db->insert('aqm_data', $data);
 	}
 }
