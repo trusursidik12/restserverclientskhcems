@@ -10,8 +10,8 @@ class Ajax_m extends CI_Model
     private function _get_datatables_query() {
 		$this->db->select('DISTINCT(waktu), id_stasiun, h2s, cs2, velocity, temperature');
 		$this->db->group_by('waktu'); 
-        $this->db->from('aqm_data');
         $this->db->where('id_stasiun', 'CEMS_RUM');
+        $this->db->from('aqm_data');
         $i = 0;
         foreach ($this->column_search as $item) { // loop column
             if(@$_POST['search']['value']) { // if datatable send POST for search
